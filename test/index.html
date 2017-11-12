@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="static/css/base.css" />
+<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+$(function()
+{
+
+
+  $(".mainButton").click(function()
+  {
+     $("body").append("<div>" + "click" + "</div>");
+  });
+  
+
+function timer() 
+{
+    $("body").append("<div>" + "hello" + "</div>");
+    setTimeout(timer, 1000);
+}
+
+//setTimeout(timer, 1000);
+
+
+});
+</script>
+
+</head>
+
+<body>
+
+    
+
+  <h1>根性</h1>
+  <div id="testButton" class="mainButton">
+      Button1
+  </div>
+
+</body>
+
+</html>
