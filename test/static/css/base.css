@@ -4,6 +4,23 @@ h1
     font-size:30px;
 }
 
+#titleBlock
+{
+    background: #336699;
+    
+    width: 1920px;
+
+    height: 240px;
+    
+    /*
+    position: absolute;
+    */
+    
+    position: fixed;
+    
+  
+}
+
 /*
 .mainButton
 {
@@ -14,17 +31,25 @@ h1
 
 body
 {
+    /*
     background: #336699;
+    */
 }
 
 #testButton
 {
     color:#ff0000;
     font-size:60px;
+    
     border:3px solid #000;
+    
+    
     padding: 20px;
+    
+    
     width: 500px;
-    /*
-height: 80px;
-*/
+    
+    
+    height: 80px;
+
 }
