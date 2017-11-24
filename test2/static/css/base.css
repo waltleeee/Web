@@ -1,0 +1,64 @@
+.block1
+{
+    border: 3px solid #000;
+width:100px;
+height: 100px;
+display: inline-block;
+margin:0 0 0 0;
+}
+
+.block2
+{
+      border: 3px solid #ff0000;
+width:100px;
+height: 100px;
+display: inline-block;
+margin:0 0 0 0;
+}
+
+.block3
+{
+      border: 3px solid #000;
+width:100px;
+height: 100px;
+
+}
+
+.product-item {
+    display: block;
+    border: 1px solid #000;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+.productList {
+
+    border: 1px solid #ff0000;
+    height: 100px;
+   
+}
+
+.container-1 {
+    width: 100%;
+    border: 1px solid #000;
+    height: 200px;
+    overflow: scroll;
+}
+
+.container-2 {
+    border: 1px solid #00ff00;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    /*為了讓abs-block維持在父物件的某位置,所以父物件的position要設為relative*/
+    
+}
+
+.abs-block {
+    border: 1px solid #0000ff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;/*顯示滑鼠標*/   
+}
