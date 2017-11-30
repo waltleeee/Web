@@ -163,29 +163,109 @@ background-color: tomato;
 
 a:link
 {
-color:green;
+color:white;
 background-color: transparent;
 text-decoration: none;
 }
 
 a:visited
 {
-    color:pink;
+    color:white;
     background-color: transparent;
     text-decoration: none;
 }
 
 a:hover
 {
-    color:red;
+    color:white;
     background-color: transparent;
     text-decoration: underline;
 }
 
 a:active
 {
-    color:yellow;
+    color:white;
     background-color: transparent;
     text-decoration: underline;
+}
+
+#Profile
+{
+    /*
+    border:3px solid #000;
+    */
+    width:216px;
+    height: 29px;
+    background:url("../image/bg_ggxrd_leftmenu_heading.png");
+    line-height:29px;
+    text-align:center;
+    
+}
+
+#ProfileLink
+{
+    text-align:center;
+    /*    
+    display: block;
+    */
+    z-index: 2;
+    
+    vertical-align: middle;
+}
+
+#Record
+{
+    /*
+    border:3px solid #000;
+    */
+    width:216px;
+    height: 29px;
+    background:url("../image/bg_ggxrd_leftmenu_heading.png");
+    line-height:29px;
+    text-align:center;
+    
+}
+
+#RecordLink
+{
+  
+    text-align:center;
+    /*
+    display: block;
+    */
+    z-index: 2;
+    /*
+    vertical-align: text-bottom;
+    */
+    
+}
+
+#Logout
+{
+    /*
+    border:3px solid #000;
+    */
+    width:216px;
+    height: 29px;
+    background:url("../image/bg_ggxrd_leftmenu_heading.png");
+    line-height:29px;
+    text-align:center;
+    
+}
+
+#LogoutLink
+{
+   
+   
+    text-align:center;
+    /*
+    display: block;
+    */
+    z-index: 2;
+
+    /*
+    vertical-align: text-bottom;
+    */
+    
 }
 
