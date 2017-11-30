@@ -161,6 +161,11 @@ background-color: tomato;
 
 }
 
+#ButtonContainer
+{
+     border:3px solid #000;
+}
+
 a:link
 {
 color:white;
@@ -199,7 +204,8 @@ a:active
     background:url("../image/bg_ggxrd_leftmenu_heading.png");
     line-height:29px;
     text-align:center;
-    
+    display:inline-block;
+    margin:60px auto 0 0;
 }
 
 #ProfileLink
@@ -223,7 +229,10 @@ a:active
     background:url("../image/bg_ggxrd_leftmenu_heading.png");
     line-height:29px;
     text-align:center;
-    
+    display:inline-block;
+    /*
+    margin:60px auto 0 500px;
+    */
 }
 
 #RecordLink
@@ -251,6 +260,15 @@ a:active
     line-height:29px;
     text-align:center;
     
+    display:inline-block;
+    
+     /*
+    margin:-14px 0 auto 0;
+    */
+    /*
+    position:absolute;
+    right:0px;
+    */
 }
 
 #LogoutLink
