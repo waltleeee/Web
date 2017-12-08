@@ -8,10 +8,12 @@ def main():
 
   while True:
     c_sock, addr = s_sock.accept()
-    print "connect", c_sock, addr
-print "Hello"
+    print("connect", c_sock, addr)
 
-if __name__ == "__main__":#avoid other script import web_server and run main()
-  print "main"
+#print "Hello"
+
+#avoid other script import web_server and run main()
+if __name__ == "__main__":
+  print("start main")
   main()
 
