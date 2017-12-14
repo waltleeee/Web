@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<h1>DemoSite</h1>
+<table>
+
+<tr>
+    <td>name</td>
+    <td>content</td>
+    <td>date</td>
+    <td></td>
+</tr>
+
+
+{% for post in posts %}
+<tr>
+    <td>{{ post.name  }}  </td>
+    <td>{{ post.content  }}</td>
+    <td>{{ post.date_created  }}</td>
+    <td> <a href="/delete?id={{ post.id }}">delete</a> </td>
+</tr>
+{% endfor %}
+    </table>
+
+
+<form action="/add" method="post">
+{% csrf_token %}
+
+<p>
+    <label for="id_name">Name:</label>
+<input type="text" id="id_name" name="name" />
+</p>
+
+<p>
+<input type="text" name="content" />
+</p>
+
+
+
+<input type="submit" value="OK">
+
+</form>
+
+
+</body>
+
+</html>
