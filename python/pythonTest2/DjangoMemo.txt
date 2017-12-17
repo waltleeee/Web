@@ -1,0 +1,60 @@
+
+
+1.安裝python
+
+2.在要開專案的位置開起命令列,輸入pip install django
+
+3.創建自己的專案,在要開專案的位置開起命令列,輸入django-admin.py startproject ProjectName
+
+4.開啟settings.py,位置為ProjectName/setting.py,將USE_TZ改為FALSE,TIME_ZONE改為Asia/Taipei
+
+5.如要改變資料庫設定,在settings.py的DATABASES
+
+6.創建資料庫,在manage.py位置下打開命令列,輸入python manage.py migrate
+
+
+
+測試:
+1.在manage.py位置下打開命令列,輸入python manage.py runserver
+
+2.打開瀏覽器,輸入127.0.0.1:8000(預設),看是否成功
+
+
+
+7.創建應用程式,在manage.py位置下打開命令列,輸入python manage.py startapp appName
+
+8.到setting.py裡的INSTALLED_APPS,把appName加進去
+
+9.到mysite的urls.py裡設定從預設127.0.0.1:8000連進來會進行甚麼行為 
+   
+  from django.conf.urls import url
+  from django.contrib import admin
+  from mysite import views
+
+  urlpatterns = 
+  [
+        url(r'^$', views.index),#view為自己創的views.py
+  ]
+
+10.在mysite創一個views.py 內容輸入
+  
+  import uuid
+  from datetime import datetime, timedelta
+  from django.http import HttpResponse, HttpResponseRedirect
+  from django.template.response import TemplateResponse
+  from webServer.models import Post
+
+
+  def index(request):#此index則為第九步呼叫的index
+    
+      return TemplateResponse(request, "index.html")
+
+11.在mysite那一層建立templates資料夾,然後把準備好的index.html放進去
+
+12.在setting.py的TEMPLATES的'DIRS'內容加入os.path.join(BASE_DIR, "templates")
+   例: 'DIRS': [os.path.join(BASE_DIR, "templates")],
+
+13打開瀏覽器連127.0.0.1:8000測試
+
+
+
