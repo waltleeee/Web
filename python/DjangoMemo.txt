@@ -1,0 +1,126 @@
+
+
+1.安裝python
+
+2.在要開專案的位置開起命令列,輸入pip install django
+
+3.創建自己的專案,在要開專案的位置開起命令列,輸入django-admin.py startproject ProjectName
+
+4.開啟settings.py,位置為ProjectName/setting.py,將USE_TZ改為FALSE,TIME_ZONE改為Asia/Taipei
+
+5.如要改變資料庫設定,在settings.py的DATABASES
+
+6.創建資料庫,在manage.py位置下打開命令列,輸入python manage.py migrate
+
+
+
+測試:
+1.在manage.py位置下打開命令列,輸入python manage.py runserver
+
+2.打開瀏覽器,輸入127.0.0.1:8000(預設),看是否成功
+
+
+
+7.創建應用程式,在manage.py位置下打開命令列,輸入python manage.py startapp appName
+
+8.到setting.py裡的INSTALLED_APPS,把appName加進去
+
+9.到mysite的urls.py裡設定從預設127.0.0.1:8000連進來會進行甚麼行為 
+   
+  from django.conf.urls import url
+  from django.contrib import admin
+  from mysite import views
+
+  urlpatterns = 
+  [
+        url(r'^$', views.index),#view為自己創的views.py
+  ]
+
+10.在mysite創一個views.py 內容輸入
+  
+  import uuid
+  from datetime import datetime, timedelta
+  from django.http import HttpResponse, HttpResponseRedirect
+  from django.template.response import TemplateResponse
+  from webServer.models import Post
+
+
+  def index(request):#此index則為第九步呼叫的index
+    
+      return TemplateResponse(request, "index.html")
+
+11.在mysite那一層建立templates資料夾,然後把準備好的index.html放進去
+
+12.在setting.py的TEMPLATES的'DIRS'內容加入os.path.join(BASE_DIR, "templates")
+   例: 'DIRS': [os.path.join(BASE_DIR, "templates")],
+
+13打開瀏覽器連127.0.0.1:8000測試
+
+
+二.創建後台
+
+1.打開自己建的APP內的model.py,然後輸入
+  
+ from django.db import models
+ from django.utils import timezone
+ from django.contrib.auth.models import User
+
+ class Post(models.Model):
+    author=models.ForeignKey(User,on_delete=models.CASCADE)
+    title=models.CharField(max_length=200)
+    text=models.TextField()
+    created_date=models.DateField(default=timezone.now)
+    published_date=models.DateTimeField(blank=True,null=True)
+
+    def publish(self):
+        self.published_date=timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.title 
+
+
+2.打開命令列,輸入python manage.py migrate
+
+3.輸入python manage.py createsuperuser 來創建超級使用者
+
+4.輸入python manage.py shell
+
+5.先載入Post,輸入from 'appName'.models import Post
+
+6.可以利用輸入Post.objects.all(),來看所有的物件
+
+7.載入User Modle,輸入from django.contrib.auth.models import User
+
+8.可以利用User.objects.all(),來看所有的使用者
+
+9.要post新物件,先抓出user,輸入user=User.objects.get(username='自填'),來抓出自己要的user
+
+10.輸入 Post.objects.create(author=user,title='自填',text='自填')來新增一個post
+
+11.可以利用 Post.objects.filter(條件自填)來找自己想看的物件
+
+12.利用Post.objects.filter(published_date__isnull=False),來看哪些post是已經發佈(publish)的了
+
+13.利用post=Post.objects.get(id=自填),來取出自己要的post
+
+14.利用post.publish(),來發佈出去
+
+15.可以利用Post.objects.order_by('created_date') or Post.objects.order_py('-created_date')來排序
+
+16.輸入exit()來離開
+
+17.打開'appName'/admin.py,輸入
+
+   from django.contrib import admin
+   from .models import Post
+
+   admin.site.register(Post)
+
+  將自己創建的Post Model註冊進去
+
+
+18.在命令列輸入python manage.py runserver後,在瀏覽器輸入127.0.0.1:8000/admin/,進入登入畫面,輸入自己
+   創建的使用者登入
+
+
