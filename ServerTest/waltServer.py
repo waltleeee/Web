@@ -1,4 +1,4 @@
-﻿import socket
+﻿うぃぇimport socket
 import threading
 
 def handle_conn(cli_sock):
@@ -38,7 +38,7 @@ if __name__=="__main__":
         print "client_sock",cli_sock,addr
 
         th=threading.Thread(target=handle_conn,args=[cli_sock])#これで　第二ユーサは第一ユーサを待ちすることが必要ない
-        th.setDaemon(True)
+        th.setDaemon(True)#
         th.start()
        
 
