@@ -15,7 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+#import Blog
+#from django.conf.urls import patterns,include,url
+#admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #path('',Blog.urls),
 ]
+
+#urlpatterns = patterns('',
+#url(r'^admin/',include( admin.site.urls)),
+#url(r'',include('BlogServer.urls')),
+#)
+   
+
