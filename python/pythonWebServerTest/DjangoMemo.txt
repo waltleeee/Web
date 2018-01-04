@@ -54,6 +54,18 @@
 12.在setting.py的TEMPLATES的'DIRS'內容加入os.path.join(BASE_DIR, "templates")
    例: 'DIRS': [os.path.join(BASE_DIR, "templates")],
 
+13.在mysite那一層建立static資料夾,然後把CSS,image,js放進去
+
+14.在setting.py的最下面加入
+
+   STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+   )
+
+15.在index.html的head加入
+
+    <link rel="stylesheet" href="{%static '放CSS的資料夾名/CSS檔名加副檔名'%}">
+
 13打開瀏覽器連127.0.0.1:8000測試
 
 
