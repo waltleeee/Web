@@ -1,0 +1,3 @@
+1.CSS:position設成absolute後,margin就沒有用了
+
+2.CSS:position設成absolute後,他會往父物件找設定,直到找到position為relative的物件
