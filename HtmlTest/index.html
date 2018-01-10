@@ -122,11 +122,31 @@ function timer()
        <ins>單身:否</ins><br/>
        根性<sub>根性根性</sub>根性<sup>根性根性</sup>根性<br/>
 
-       <a href="https://www.google.com">
-        <img id="linkImage" src="static/image/good.png" alt="GOOD" style="width:715px;height:1000px;">
-       </a><br/>
+        <!--
+        <a href="https://www.google.com">
+        -->
+        <img id="linkImage" src="static/image/good.png" alt="GOOD" usemap="#tawawaMap">
+        <!-- 
+        </a><br/>
+        -->
+
+      <map name="tawawaMap">
+         <!--rect coords is leftUp point and rightDown point -->
+         <!--circle coords is center point and radirus-->
+         <!--
+          
+         <area shape="rect" coords="400,500,550,650" alt="burst" href="https://www.google.com">
+         -->
+         <area shape="circle" coords="475,575,100" alt="burst" href="https://www.google.com">
+      </map>
 
        <a href="#titleSpace" >Retrun to Top</a>
+
+       <picture>
+         <source media="(min-width:650px)" srcset="static/image/bg_heading_3.png" >
+          <img  src="static/image/good.png"  style="width:1000px;">
+
+         </picture>
        
 
        <!--Record Test-->
