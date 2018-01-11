@@ -363,3 +363,31 @@ border:1px solid #000;
     height:1000px;
 }
 
+#table
+{
+    border:1px solid black;
+    
+    border-collapse:collapse;
+    
+    width:500px;
+
+    /*
+    border-spacing: 10px;
+    */
+}
+
+th,td
+{
+   
+    border:1px solid black;
+    
+    border-collapse:collapse;
+  
+    padding:15px;
+}
+
+td
+{
+    text-align: center;
+}
+
