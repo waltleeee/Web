@@ -376,6 +376,17 @@ border:1px solid #000;
     */
 }
 
+#table tr:nth-child(even)
+{
+    background-color: #eee;
+}
+
+#table tr:nth-child(odd)
+{
+    background-color: #fff;
+}
+
+
 th,td
 {
    
@@ -384,6 +395,11 @@ th,td
     border-collapse:collapse;
   
     padding:15px;
+}
+
+th
+{
+    background-color:white;
 }
 
 td
