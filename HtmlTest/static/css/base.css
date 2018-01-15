@@ -106,7 +106,7 @@ background-color: tomato;
 
     width: 1000px;
 
-    height: 1500px;
+    height: 2000px;
 /*
     left:50%;
 */
@@ -405,5 +405,51 @@ th
 td
 {
     text-align: center;
+}
+
+#testList
+{
+    list-style-type:disc;
+    /*
+    list-style-type:circle;
+    list-style-type:square;
+    list-style-type:none;
+    */
+}
+
+#testOrderedList
+{
+    /*
+    type:A;
+    */
+}
+
+#testHorizonList
+{
+    list-style-type:none;
+    margin: 0;
+    padding:0;
+    overflow:hidden;
+    background-color:#333333;
+
+}
+
+#horizonLi
+{
+  float:left;
+}
+
+#horizonLi a
+{
+  display:block;
+  color:white;
+  text-align:center;
+  padding:16px;
+  text-decoration:none;
+}
+
+#horizonLi a:hover
+{
+    background-color:#111111;
 }
 
